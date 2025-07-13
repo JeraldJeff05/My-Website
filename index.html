@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerald Jeff Madera - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/project-slideshow.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Jerald Jeff Madera</h1>
+        <p>Computer Science Graduate | Aspiring Project Manager | Vibe Coder</p>
+    </div>
+
+    <div class="container">
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <button class="nav-tab active" onclick="showWindow('about')">About Me</button>
+            <button class="nav-tab" onclick="showWindow('projects')">Projects</button>
+            <button class="nav-tab" onclick="showWindow('Certifications')">Certifications</button>
+            <button class="nav-tab" onclick="showWindow('contact')">Contact</button>
+            <button class="nav-tab" onclick="showWindow('cv')">CV & Resume</button>
+            
+        </div>
+
+        <!-- Window Container -->
+        <div class="window-container">
+            <!-- About Me Window -->
+            <div class="window active" id="about">
+                <div class="window-header">
+                    <span>About Me</span>
+                    <div class="window-controls">
+                        <div class="control-btn close"></div>
+                        <div class="control-btn minimize"></div>
+                        <div class="control-btn maximize"></div>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <img src="images/your-photo.jpg" alt="Profile Picture" class="profile-image">
+                    
+                    <h2 style="text-align: center; margin: 0 auto; width: 80%;">Hello, I'm Jerald Jeff Madera</h2>
+
+                    <p style="text-align: justify; margin: 0 auto; width: 80%;">
+                        Results-driven Computer Science graduate with strong project leadership experience and a proven ability to communicate effectively and lead collaborative teams. Skilled in programming and AI, with a solid track record of managing projects from planning to execution. Known for clear communication, adaptability, and delivering results through both technical knowledge and strong interpersonal skills.
+                    </p>
+                    
+                    <h3 style="text-align: center; margin: 20px auto 10px auto; width: 80%;">Skills</h3>
+
+                    <div style="margin: 0 auto; width: 80%; display: flex; justify-content: space-between; font-family: Arial, sans-serif; gap: 40px; flex-wrap: wrap;">
+                        <!-- Professional Skills -->
+                        <div style="flex: 1; min-width: 250px;">
+                            <h4 style="text-align: center;">Professional Skills</h4>
+                            <p style="text-align: center;"><strong>Communication:</strong> ★★★★★ (5/5)</p>
+                            <p style="text-align: center;"><strong>Team Leadership:</strong> ★★★★☆ (4.5/5)</p>
+                            <p style="text-align: center;"><strong>Project Management:</strong> ★★★★☆ (4.5/5)</p>
+                            <p style="text-align: center;"><strong>Time Management:</strong> ★★★★☆ (4/5)</p>
+                            <p style="text-align: center;"><strong>Problem Solving:</strong> ★★★★☆ (4/5)</p>
+                        </div>
+
+                        <!-- Technical Skills -->
+                        <div style="flex: 1; min-width: 250px;">
+                            <h4 style="text-align: center;">Technical Skills</h4>
+                            <p style="text-align: center;"><strong>Flutter:</strong> ★★★★☆ (4/5)</p>
+                            <p style="text-align: center;"><strong>Java:</strong> ★★★★☆ (4/5)</p>
+                            <p style="text-align: center;"><strong>Python:</strong> ★★★★☆ (4/5)</p>
+                            <p style="text-align: center;"><strong>UI/UX Design:</strong> ★★★☆☆ (3/5)</p>
+                            <p style="text-align: center;"><strong>Firebase:</strong> ★★★★☆ (4/5)</p>
+                        </div>
+                    </div>
+
+                    <h3>Interests</h3>
+                    <p>Technology Innovation, Mobile App Development, Artificial Intelligence, Team Leadership, and Creative Problem Solving</p>
+                </div>
+            </div>
+
+            <!-- Projects Window -->
+                     <div class="window" id="projects">
+                        <div class="project-grid">
+                        <!-- Project 1 -->
+                        <div class="project-card">
+                            <div class="project-image">Mobile App Project</div>
+                            <h3>SPHERE</h3>
+                            <p>A comprehensive mobile application built with Flutter and Firebase, featuring real-time data synchronization and modern UI design.</p>
+                            <a href="#" class="download-btn" onclick="openProjectSlideshow('flutter-app'); return false;">View Project</a>
+                        </div>
+                        
+                        <!-- Project 2 -->
+                        <div class="project-card">
+                            <div class="project-image">Elderly Haki</div>
+                            <h3>Elderly Haki</h3>
+                            <p>An intelligent system developed using Python and machine learning algorithms to solve real-world problems efficiently.</p>
+                            <a href="#" class="download-btn" onclick="openProjectSlideshow('ai-solution'); return false;">View Project</a>
+                        </div>
+                        
+                        <!-- Project 3 -->
+                        <div class="project-card">
+                            <div class="project-image">Meowrff</div>
+                            <h3>Meowrff</h3>
+                            <p>Successfully led a team of developers in creating a complex software solution, demonstrating strong project management skills.</p>
+                            <a href="#" class="download-btn" onclick="openProjectSlideshow('team-project'); return false;">View Project</a>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="project-card">
+                            <div class="project-image">Travelmate</div>
+                            <h3>Flutter Mobile Application</h3>
+                            <p>A comprehensive mobile application built with Flutter and Firebase, featuring real-time data synchronization and modern UI design.</p>
+                            <a href="#" class="download-btn" onclick="openProjectSlideshow('flutter-app'); return false;">View Project</a>
+                        </div>
+
+
+
+
+                    </div>
+                    </div>
+
+
+
+
+
+
+
+
+          <!-- Contact Window -->
+<div class="window" id="contact">
+    <div class="window-header">
+        <span>Contact</span>
+        <div class="window-controls">
+            <div class="control-btn close"></div>
+            <div class="control-btn minimize"></div>
+            <div class="control-btn maximize"></div>
+        </div>
+    </div>
+    <div class="window-content">
+        <h2>Get In Touch</h2>
+        <p>I'm always open to discussing new opportunities, collaborations, or just having a conversation about technology and innovation.</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">@</div>
+                <div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:maderajeraldjeff@gmail.com" style="text-decoration: none; color: inherit;">maderajeraldjeff@gmail.com</a></p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+639473623226" style="text-decoration: none; color: inherit;">+63 947 362 3226</a></p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">🌐</div>
+                <div>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/jerald-jeff-madera" target="_blank" style="text-decoration: none; color: inherit;">linkedin.com/in/jerald-jeff-madera</a></p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">💻</div>
+                <div>
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/jerald-jeff-madera" target="_blank" style="text-decoration: none; color: inherit;">github.com/jerald-jeff-madera</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <!-- CV & Resume Window -->
+            <div class="window" id="cv">
+                <div class="window-header">
+                    <span>CV & Resume</span>
+                    <div class="window-controls">
+                        <div class="control-btn close"></div>
+                        <div class="control-btn minimize"></div>
+                        <div class="control-btn maximize"></div>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <h2>Professional Background</h2>
+                    
+                    <div class="cv-section">
+                        <h3>Education</h3>
+                        <p>Bachelor of Science in Computer Science - Strong academic foundation in programming, algorithms, and software development methodologies.</p>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h3>Experience</h3>
+                        <p>Project Leader with proven track record of managing technical teams and delivering complex software solutions on time and within budget.</p>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h3>Certifications</h3>
+                        <p>Various certifications in Flutter development, project management, and AI/ML technologies.</p>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h3>Awards</h3>
+                        <p>Recognition for leadership excellence and outstanding project delivery in academic and professional settings.</p>
+                    </div>
+                    
+                    <a href="assets/cv.pdf" class="download-btn">Download CV</a>
+                    <a href="assets/resume.pdf" class="download-btn">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/project-slideshow.js"></script>
+</body>
+</html>

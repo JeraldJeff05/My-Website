@@ -1,0 +1,230 @@
+/* Responsive Design - Mobile First Approach */
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+    .window-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .header p {
+        font-size: 1em;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-tab {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .window-content {
+        padding: 20px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .header p {
+        font-size: 0.9em;
+    }
+
+    .navbar {
+        padding: 8px;
+        gap: 5px;
+    }
+
+    .nav-tab {
+        padding: 8px 15px;
+        font-size: 0.8em;
+    }
+
+    .window-content {
+        padding: 15px;
+    }
+
+    .window-header {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .project-card {
+        padding: 12px;
+    }
+
+    .project-image {
+        height: 120px;
+        font-size: 0.8em;
+    }
+
+    .contact-item {
+        padding: 12px;
+    }
+
+    .download-btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .cv-section {
+        margin-bottom: 20px;
+    }
+
+    /* Skills section responsive */
+    .skills-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .skills-container > div {
+        min-width: 100%;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .header h1 {
+        font-size: 3em;
+    }
+
+    .header p {
+        font-size: 1.4em;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .window {
+        max-width: 1000px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .navbar,
+    .window-controls,
+    .download-btn {
+        display: none;
+    }
+
+    .window {
+        display: block !important;
+        box-shadow: none;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        page-break-inside: avoid;
+    }
+
+    .window-header {
+        background: #f0f0f0;
+        color: black;
+    }
+
+    .header {
+        color: black;
+    }
+
+    .header h1 {
+        color: black;
+        text-shadow: none;
+    }
+
+    .header p {
+        color: black;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .window {
+        background: rgba(30, 30, 30, 0.95);
+        color: #e0e0e0;
+    }
+
+    .project-card {
+        background: #2a2a2a;
+        color: #e0e0e0;
+    }
+
+    .contact-item {
+        background: #2a2a2a;
+        color: #e0e0e0;
+    }
+
+    .contact-item:hover {
+        background: #3a3a3a;
+    }
+
+    .project-image {
+        background: #3a3a3a;
+        color: #b0b0b0;
+    }
+}
