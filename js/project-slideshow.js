@@ -4,8 +4,8 @@ const projectData = {
         title: 'SPHERE',
         description: 'A comprehensive mobile application built with Flutter and Firebase, featuring real-time data synchronization and modern UI design.',
         images: [
-            'images/Sphere1.png',
-            'images/Sphere.png',
+            'images/SphereS.png',
+            'images/SphereH.png',
             'images/flutter-app-3.jpg',
             'images/flutter-app-4.jpg'
         ]
@@ -14,22 +14,35 @@ const projectData = {
         title: 'ELDERLY HAKI',
         description: 'An intelligent system developed using Python and machine learning algorithms to solve real-world problems efficiently.',
         images: [
-            'images/ai-project-1.jpg',
-            'images/ai-project-2.jpg',
-            'images/ai-project-3.jpg',
-            'images/ai-project-4.jpg'
+            'images/Elderly/9.png',
+            'images/Elderly/10.png',
+            'images/Elderly/11.png',
+            'images/Elderly/12.png'
         ]
     },
     'team-project': {
         title: 'MEOWRFF!!',
         description: 'Successfully led a team of developers in creating a complex software solution, demonstrating strong project management skills.',
         images: [
-            'images/team-project-1.jpg',
-            'images/team-project-2.jpg',
-            'images/team-project-3.jpg',
-            'images/team-project-4.jpg'
+            'images/Meowrff/Meow1.png',
+            'images/Meowrff/Meow2.png',
+            'images/Meowrff/Meow2.png',
+            'images/Meowrff/Meow2.png'
         ]
-    }
+    },
+    'travel-mate': {
+        title: 'Travelmate',
+        description: 'A comprehensive mobile application built with Flutter and Firebase, featuring real-time data synchronization and modern UI design.',
+        images: [
+            'images/Travelmate/travel1.png',
+            'images/Travelmate/travel (1).png',
+            'images/Travelmate/travel (2).png',
+            'images/Travelmate/travel (3).png'
+        ]
+    },
+
+
+
 };
 
 let currentSlide = 0;
