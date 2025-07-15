@@ -108,7 +108,7 @@
                             <img src="images/Travelmate.png" alt="SPHERE Project" class="project-image">
                             <h3>Travelmate</h3>
                             <p>is a collaborative Android app that simplifies group travel planning. It features a friend system, customizable itineraries, media sharing, and map-based exploration of accommodations, restaurants, and attractions. With a smart recommendation system based on past trips, it offers a personalized and interactive travel experience.</p>
-                            <a href="#" class="download-btn" onclick="openProjectSlideshow('travel-mate'); return false;">View Project</a>
+                            <a href="#" class="download-btn" onclick="openProjectSlideshow('flutter-app'); return false;">View Project</a>
                         </div>
 
 
@@ -119,397 +119,65 @@
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Certification Window</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .window {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 1200px;
-            overflow: hidden;
-            animation: windowSlideIn 0.6s ease-out;
-        }
-
-        @keyframes windowSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .window-header {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 20px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .window-header span {
-            font-size: 24px;
-            font-weight: 700;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            letter-spacing: -0.5px;
-        }
-
-        .window-controls {
-            display: flex;
-            gap: 10px;
-        }
-
-        .control-btn {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .control-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 8px;
-            height: 1px;
-            background: rgba(0, 0, 0, 0.6);
-            transition: all 0.2s ease;
-        }
-
-        .control-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .control-btn.close {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
-        }
-
-        .control-btn.minimize {
-            background: linear-gradient(135deg, #ffd93d, #ffcd02);
-        }
-
-        .control-btn.maximize {
-            background: linear-gradient(135deg, #6bcf7f, #57cc02);
-        }
-
-        .control-btn.maximize::before {
-            width: 6px;
-            height: 6px;
-            border: 1px solid rgba(0, 0, 0, 0.6);
-            background: none;
-        }
-
-        .window-content {
-            padding: 40px 30px;
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 30px;
-            max-width: 100%;
-        }
-
-        .cert-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 30px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .cert-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
-            background-size: 200% 100%;
-            animation: gradientShift 3s ease-in-out infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .cert-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .cert-badge {
-            position: relative;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .cert-icon {
-            font-size: 48px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            padding: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .cert-ribbon {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-        }
-
-        .cert-content h3 {
-            color: white;
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            line-height: 1.3;
-        }
-
-        .cert-issuer {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .cert-content p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .cert-date {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 25px;
-        }
-
-        .cert-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
-        }
-
-        .cert-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-            background: linear-gradient(135deg, #5a67d8, #6b46c1);
-        }
-
-        .cert-btn:active {
-            transform: translateY(0);
-        }
-
-        @media (max-width: 768px) {
-            .window {
-                margin: 10px;
-            }
-            
-            .cert-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .window-content {
-                padding: 30px 20px;
-            }
-            
-            .cert-card {
-                padding: 25px;
-            }
-        }
-
-        /* Pulse animation for badges */
-        .cert-ribbon {
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        /* Hover effects for icons */
-        .cert-icon {
-            transition: all 0.3s ease;
-        }
-
-        .cert-card:hover .cert-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-    </style>
-</head>
-<body>
-    <div class="window" id="Certifications">
-        <div class="window-header">
-            <span>Certifications</span>
-            <div class="window-controls">
-                <div class="control-btn close"></div>
-                <div class="control-btn minimize"></div>
-                <div class="control-btn maximize"></div>
-            </div>
+<div class="window" id="Certifications">
+    <div class="window-header">
+        <span>Certifications</span>
+        <div class="window-controls">
+            <div class="control-btn close"></div>
+            <div class="control-btn minimize"></div>
+            <div class="control-btn maximize"></div>
         </div>
-        <div class="window-content">
-            <div class="cert-grid">
-                <!-- Certificate 1 -->
-                <div class="cert-card">
-                    <div class="cert-badge">
-                        <div class="cert-icon">📊</div>
-                        <div class="cert-ribbon">CERTIFIED</div>
-                    </div>
-                    <div class="cert-content">
-                        <h3>Foundations of Project Management</h3>
-                        <div class="cert-issuer">Google Career Certificates</div>
-                        <p>An introductory certification that teaches the basic principles, tools, and techniques used to successfully plan, execute, and manage projects. It covers topics like project lifecycle, roles and responsibilities, time and resource management, and effective communication.</p>
-                        <div class="cert-date">Completed: 2024</div>
-                    </div>
-                    <a href="#" class="cert-btn" onclick="openCertificateModal('project-management'); return false;">View Certificate</a>
+    </div>
+    <div class="window-content">
+        <div class="cert-grid">
+            <!-- Certificate 1 -->
+            <div class="cert-card">
+                <div class="cert-badge">
+                    <div class="cert-icon">📊</div>
+                    <div class="cert-ribbon">CERTIFIED</div>
                 </div>
-                
-                <!-- Certificate 2 -->
-                <div class="cert-card">
-                    <div class="cert-badge">
-                        <div class="cert-icon">🗣️</div>
-                        <div class="cert-ribbon">VERIFIED</div>
-                    </div>
-                    <div class="cert-content">
-                        <h3>SmallTalk English Speaking Level Test</h3>
-                        <div class="cert-issuer">SmallTalk Language Institute</div>
-                        <p>A comprehensive English proficiency assessment that evaluates speaking, listening, and communication skills through interactive conversations and practical scenarios.</p>
-                        <div class="cert-date">Completed: 2024</div>
-                    </div>
-                    <a href="#" class="cert-btn" onclick="openCertificateModal('english-speaking'); return false;">View Certificate</a>
+                <div class="cert-content">
+                    <h3>Foundations of Project Management</h3>
+                    <div class="cert-issuer">Google Career Certificates</div>
+                    <p>An introductory certification that teaches the basic principles, tools, and techniques used to successfully plan, execute, and manage projects. It covers topics like project lifecycle, roles and responsibilities, time and resource management, and effective communication.</p>
+                    <div class="cert-date">Completed: 2024</div>
                 </div>
-                
-                <!-- Certificate 3 -->
-                <div class="cert-card">
-                    <div class="cert-badge">
-                        <div class="cert-icon">📈</div>
-                        <div class="cert-ribbon">CERTIFIED</div>
-                    </div>
-                    <div class="cert-content">
-                        <h3>Fundamentals of Predictive Project Management</h3>
-                        <div class="cert-issuer">Project Management Institute</div>
-                        <p>Advanced certification focusing on predictive project management methodologies, including waterfall approaches, risk assessment, and traditional project planning techniques.</p>
-                        <div class="cert-date">Completed: 2024</div>
-                    </div>
-                    <a href="#" class="cert-btn" onclick="openCertificateModal('predictive-management'); return false;">View Certificate</a>
+                <a href="#" class="cert-btn" onclick="openCertificateModal('project-management'); return false;">View Certificate</a>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="cert-card">
+                <div class="cert-badge">
+                    <div class="cert-icon">🗣️</div>
+                    <div class="cert-ribbon">VERIFIED</div>
                 </div>
+                <div class="cert-content">
+                    <h3>SmallTalk English Speaking Level Test</h3>
+                    <div class="cert-issuer">SmallTalk Language Institute</div>
+                    <p>A comprehensive English proficiency assessment that evaluates speaking, listening, and communication skills through interactive conversations and practical scenarios.</p>
+                    <div class="cert-date">Completed: 2024</div>
+                </div>
+                <a href="#" class="cert-btn" onclick="openCertificateModal('english-speaking'); return false;">View Certificate</a>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="cert-card">
+                <div class="cert-badge">
+                    <div class="cert-icon">📈</div>
+                    <div class="cert-ribbon">CERTIFIED</div>
+                </div>
+                <div class="cert-content">
+                    <h3>Fundamentals of Predictive Project Management</h3>
+                    <div class="cert-issuer">Project Management Institute</div>
+                    <p>Advanced certification focusing on predictive project management methodologies, including waterfall approaches, risk assessment, and traditional project planning techniques.</p>
+                    <div class="cert-date">Completed: 2024</div>
+                </div>
+                <a href="#" class="cert-btn" onclick="openCertificateModal('predictive-management'); return false;">View Certificate</a>
             </div>
         </div>
     </div>
-
-    <script>
-        // Placeholder for the modal function
-        function openCertificateModal(certType) {
-            alert(`Opening certificate modal for: ${certType}`);
-        }
-
-        // Add some interactive effects
-        document.querySelectorAll('.cert-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Window controls functionality
-        document.querySelector('.control-btn.close').addEventListener('click', function() {
-            document.querySelector('.window').style.animation = 'windowSlideOut 0.3s ease-in forwards';
-        });
-
-        document.querySelector('.control-btn.minimize').addEventListener('click', function() {
-            document.querySelector('.window').style.transform = 'scale(0.8)';
-            document.querySelector('.window').style.opacity = '0.7';
-        });
-
-        document.querySelector('.control-btn.maximize').addEventListener('click', function() {
-            const window = document.querySelector('.window');
-            window.style.maxWidth = window.style.maxWidth === '100vw' ? '1200px' : '100vw';
-        });
-
-        // Add keyframe for slide out animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes windowSlideOut {
-                to {
-                    opacity: 0;
-                    transform: translateY(-30px) scale(0.95);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
-</body>
-</html>
+</div>
 
           <!-- Contact Window -->
 <div class="window" id="contact">
@@ -560,47 +228,87 @@
         </div>
     </div>
 </div>
-
-
-            <!-- CV & Resume Window -->
-            <div class="window" id="cv">
-                <div class="window-header">
-                    <span>CV & Resume</span>
-                    <div class="window-controls">
-                        <div class="control-btn close"></div>
-                        <div class="control-btn minimize"></div>
-                        <div class="control-btn maximize"></div>
-                    </div>
-                </div>
-                <div class="window-content">
-                    <h2>Professional Background</h2>
-                    
-                    <div class="cv-section">
-                        <h3>Education</h3>
-                        <p>Bachelor of Science in Computer Science - Strong academic foundation in programming, algorithms, and software development methodologies.</p>
-                    </div>
-                    
-                    <div class="cv-section">
-                        <h3>Experience</h3>
-                        <p>Project Leader with proven track record of managing technical teams and delivering complex software solutions on time and within budget.</p>
-                    </div>
-                    
-                    <div class="cv-section">
-                        <h3>Certifications</h3>
-                        <p>Various certifications in Flutter development, project management, and AI/ML technologies.</p>
-                    </div>
-                    
-                    <div class="cv-section">
-                        <h3>Awards</h3>
-                        <p>Recognition for leadership excellence and outstanding project delivery in academic and professional settings.</p>
-                    </div>
-                    
-                    <a href="assets/cv.pdf" class="download-btn">Download CV</a>
-                    <a href="assets/resume.pdf" class="download-btn">Download Resume</a>
-                </div>
-            </div>
+<!-- CV & Resume Window -->
+<div class="window" id="cv">
+    <div class="window-header">
+        <span>CV & Resume</span>
+        <div class="window-controls">
+            <div class="control-btn close"></div>
+            <div class="control-btn minimize"></div>
+            <div class="control-btn maximize"></div>
         </div>
     </div>
+    <div class="window-content">
+        <h2>Professional Background</h2>
+
+        <div class="cv-section">
+            <h3>Education</h3>
+            <p><strong>Bachelor of Science in Computer Science</strong> (2020 – 2025)<br>
+                Laguna State Polytechnic University – Major in Intelligent Systems</p>
+            <p><strong>Science, Technology, Engineering, and Mathematics</strong> (2018 – 2020)<br>
+                San Pablo Colleges</p>
+        </div>
+
+        <div class="cv-section">
+            <h3>Experience</h3>
+            <p><strong>FDS ASYA Philippines – Internship (2024)</strong><br>
+                Rotated across Project Management Unit, QA, and Development. Awarded Best Intern.<br>
+                Project Lead and Developer of <em>SPHERE</em>, awarded Best Project for design and functionality.
+            </p>
+            <p><strong>CREOTEC (2020)</strong><br>
+                Work Immersion under STEM program (Senior High School).</p>
+        </div>
+
+        <div class="cv-section">
+            <h3>Projects</h3>
+            <p><strong>Elderly Haki</strong> (2025)<br>
+                Team Lead / Front-end Developer — Developed a mobile real-time safety system for elderly monitoring using 3D CNN and Machine Learning. Utilized Agile methodology.</p>
+            <p><strong>SPHERE</strong> (2024)<br>
+                Project Manager / Front-end Developer — Created a geolocation-based web app with secured access within physical boundaries. Best Project at FDS ASYA Philippines.</p>
+            <p><strong>Bayong</strong> (2023)<br>
+                Project Manager / Presenter — Budgeting mobile app offering real-time price checks from 3 stores, helping users save up to 25%. Top 20 finalist at AppCon 2023.</p>
+        </div>
+
+        <div class="cv-section">
+            <h3>Certifications</h3>
+            <p>• English Speaking Level Test C1+ Advanced (SmallTalk2Me)<br>
+               • Foundations of Project Management (Google)<br>
+               • Fundamentals of Predictive Project Management (PMI)
+            </p>
+        </div>
+
+        <div class="cv-section">
+            <h3>Skills</h3>
+            <p>Project Management, Leadership, HTML, CSS, Java, Kanban, Agile, Trello, Monday.com</p>
+            <p>Languages: English (C1), Filipino</p>
+        </div>
+
+        <div class="cv-section">
+            <h3>Awards & Activities</h3>
+            <p>• Best Intern – FDS ASYA Philippines (2024)<br>
+               • Best Project – FDS ASYA Philippines (2024)<br>
+               • 1st Runner-Up – CCS Research Congress (2025)<br>
+               • Participant – 10th iSITE National Research Conference (2025)<br>
+               • Top 20 – AppCon (2023)
+            </p>
+        </div>
+
+        <div class="cv-section">
+            <h3>Character References</h3>
+            <p><strong>Martin Jason Tagadtad</strong><br>
+            Former Adviser – Laguna State Polytechnic University<br>
+            +63 991 849 3943</p>
+
+            <p><strong>Jessica T. Bianes</strong><br>
+            Product Specialist I – FDS ASYA Philippines<br>
+            San Pablo City</p>
+        </div>
+
+        <a href="assets/cv.pdf" class="download-btn">Download CV</a>
+        <a href="assets/resume.pdf" class="download-btn">Download Resume</a>
+    </div>
+</div>
+
 
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
