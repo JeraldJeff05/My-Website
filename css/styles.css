@@ -260,7 +260,7 @@ body {
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9em;
-    transition: background 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .download-btn:hover {

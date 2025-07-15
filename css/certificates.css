@@ -1,61 +1,4 @@
 /* CSS for Certificates Window */
-
-/* Window Container Styles */
-.window {
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    max-width: 100%;
-    margin: 20px auto;
-}
-
-.window-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.window-controls {
-    display: flex;
-    gap: 8px;
-}
-
-.control-btn {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-}
-
-.control-btn:hover {
-    opacity: 0.8;
-}
-
-.control-btn.close {
-    background: #ff5f57;
-}
-
-.control-btn.minimize {
-    background: #ffbd2e;
-}
-
-.control-btn.maximize {
-    background: #28ca42;
-}
-
-.window-content {
-    background: #f8f9fa;
-    min-height: 400px;
-}
-
-/* Certificate Grid Styles */
 .cert-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -190,9 +133,5 @@
     
     .cert-content h3 {
         font-size: 1.2rem;
-    }
-    
-    .window {
-        margin: 10px;
     }
 }
